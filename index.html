@@ -1,61 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saeed Diab – Pianist</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saeed Diab – Pianist</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      font-family: Helvetica, sans-serif;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    nav {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      z-index: 2;
+    }
+    nav a {
+      text-decoration: none;
+      color: #222;
+      font-weight: bold;
+    }
+    nav a.active {
+      color: #b89c76;
+    }
+    .page {
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      color: white;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .page.active {
+      display: block;
+    }
+    .about-title {
+      text-align: center;
+      margin-top: 15vh;
+      font-size: 4rem;
+      color: #eee;
+    }
+    .about-subtitle {
+      text-align: center;
+      font-size: 2rem;
+      color: #eee;
+    }
+    .bio {
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      transform: translateY(-50%);
+      width: 40%;
+      white-space: pre-wrap;
+      color: #f0f0f0;
+      font-size: 1.1rem;
+    }
+    iframe {
+      display: block;
+      margin: 2rem auto;
+      width: 60%;
+      height: 340px;
+      border: none;
+    }
+    .gallery-wrapper {
+      width: 60%;
+      margin: auto;
+      position: relative;
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .gallery-wrapper img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      z-index: 1;
+      background: none;
+      border: none;
+      transform: translateY(-50%);
+    }
+    .left-arrow {
+      left: -3rem;
+    }
+    .right-arrow {
+      right: -3rem;
+    }
+    .dots {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      background-color: #ccc;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .dot.active {
+      background-color: #333;
+    }
+    .contact-grid {
+      width: 70%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 2rem;
+      color: white;
+      padding-top: 10vh;
+    }
+    .subscribe input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 70%;
+    }
+    .subscribe button {
+      padding: 0.5rem;
+      font-size: 1rem;
+      background-color: #b89c76;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    a {
+      color: #f5f5f5;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Saeed Diab – Pianist</h1>
-        <p>Concert Pianist based in Berlin</p>
-        <div id="google_translate_element"></div>
-    </header>
-    <section class="bio">
-        <img src="images/portrait.jpg" alt="Saeed Diab Portrait">
-        <p>Born in 1999 to a Palestinian family in the Galilee, Saeed Diab is a concert pianist based in Berlin. He studied at the Buchmann-Mehta School of Music in Tel Aviv and later earned his Artist Diploma from the Barenboim-Said Akademie, where he worked closely with Sir András Schiff.</p>
-        <p>Saeed has won top prizes in national competitions and has performed widely as a soloist, chamber musician, and with orchestras across Europe and the Middle East. His appearances include international festivals and prestigious venues.</p>
-        <p>He has participated in masterclasses with renowned artists including Daniel Barenboim, Oxana Yablonskaya, Gilbert Kalish, and Norma Fisher.</p>
-    </section>
-    <section class="gallery">
-        <h2>Gallery</h2>
-        <img src="images/concert.jpg" alt="Concert Hall">
-        <img src="images/piano.jpg" alt="Piano Close-up">
-    </section>
-    <section class="videos">
-        <h2>Videos</h2>
-        <div class="video-grid">
-            <iframe src="https://www.youtube.com/embed/oIeZjF0T55k" frameborder="0" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/PRdF11HcYPg" frameborder="0" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/4PmIr6sQi6s" frameborder="0" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/tLbuYcjOlp0" frameborder="0" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/lvLsOm3VGXI" frameborder="0" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/zaHTWLENl04" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </section>
-    <section class="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:saeeddiabpianist@gmail.com">saeeddiabpianist@gmail.com</a></p>
-        <p>Instagram: <a href="https://www.instagram.com/saeedpianist/" target="_blank">@saeedpianist</a></p>
-        <p>YouTube: <a href="https://www.youtube.com/@saeedpianist" target="_blank">@saeedpianist</a></p>
-    </section>
-    <section class="subscribe">
-        <h2>Subscribe</h2>
-        <form action="https://buttondown.email/api/emails/embed-subscribe/saeeddiab" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/saeeddiab', 'popupwindow')">
-            <input type="email" name="email" placeholder="Enter your email" required>
-            <input type="submit" value="Subscribe">
-        </form>
-    </section>
-    <footer>
-        <p>&copy; 2025 Saeed Diab</p>
-    </footer>
-    <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+  <nav>
+    <a href="#" class="active" onclick="showPage('about')">About</a>
+    <a href="#" onclick="showPage('media')">Media</a>
+    <a href="#" onclick="showPage('gallery')">Gallery</a>
+    <a href="#" onclick="showPage('contact')">Contact</a>
+  </nav>
+
+  <div id="about" class="page active" style="background-image: url('images/1.jpg');">
+    <h1 class="about-title">Saeed Diab</h1>
+    <h2 class="about-subtitle">Pianist</h2>
+    <div class="bio">
+Born in 1999 to a Palestinian family from the Galilee,
+Saeed Diab is a concert pianist now based in Berlin.
+He studied at the Buchmann-Mehta School of Music
+in Tel Aviv, and later earned his Artist Diploma
+from the Barenboim-Said Akademie, where he
+Worked closely alongside Sir András Schiff.
+
+Saeed has won top prizes in national competitions
+and performed as a soloist, chamber musician,
+and with orchestras throughout Europe and the Middle East.
+His appearances include international festivals
+and performances at prestigious venues.
+
+He took part in masterclasses with renowned artists,
+including Daniel Barenboim, Oxana Yablonskaya,
+Gilbert Kalish, and Norma Fisher.
+    </div>
+  </div>
+
+  <div id="media" class="page" style="background-image: url('images/1.jpg'); background-color: rgba(0,0,0,0.3); background-blend-mode: darken; overflow-y: scroll;">
+    <iframe src="https://www.youtube.com/embed/oIeZjF0T55k" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/84kkPSna1yk" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/76ypybRAk_I" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/tLbuYcjOlp0" allowfullscreen></iframe>
+    <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
+      For more performances – <a href="https://www.youtube.com/@saeedpianist" target="_blank">visit my YouTube channel</a>
+    </p>
+  </div>
+
+  <div id="gallery" class="page" style="background-image: url('images/1.jpg'); background-color: rgba(0,0,0,0.4); background-blend-mode: darken;">
+    <div class="gallery-wrapper">
+      <button class="arrow left-arrow" onclick="prevImage()">&#8249;</button>
+      <img id="gallery-image" src="images/2.jpg" alt="Gallery Image" />
+      <button class="arrow right-arrow" onclick="nextImage()">&#8250;</button>
+    </div>
+    <div class="dots" id="gallery-dots"></div>
+  </div>
+
+  <div id="contact" class="page" style="background-image: url('images/1.jpg'); background-color: rgba(0,0,0,0.3); background-blend-mode: darken;">
+    <div class="contact-grid">
+      <div>
+        📧 <strong>Email:</strong><br />
+        saeeddiabpianist@gmail.com
+      </div>
+      <div class="subscribe">
+        <p>Subscribe to my mailing list for updates:</p>
+        <input type="email" placeholder="Your email" />
+        <button>Subscribe</button>
+      </div>
+      <div>
+        ▶️ <a href="https://www.youtube.com/@saeedpianist" target="_blank">YouTube Channel</a>
+      </div>
+      <div>
+        📸 <a href="https://www.instagram.com/saeedpianist/" target="_blank">Instagram: @saeedpianist</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const pages = document.querySelectorAll('.page');
+    const navLinks = document.querySelectorAll('nav a');
+
+    function showPage(id) {
+      pages.forEach(page => page.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      navLinks.forEach(link => link.classList.remove('active'));
+      navLinks.forEach(link => {
+        if (link.textContent.toLowerCase() === id) link.classList.add('active');
+      });
     }
-    </script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    const galleryImages = ["2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg","11.jpg"];
+    let currentImg = 0;
+    const galleryImage = document.getElementById('gallery-image');
+    const dotsContainer = document.getElementById('gallery-dots');
+
+    function updateGallery() {
+      galleryImage.src = `images/${galleryImages[currentImg]}`;
+      dotsContainer.innerHTML = galleryImages.map((_, i) => `<span class='dot ${i === currentImg ? 'active' : ''}' onclick='goToImage(${i})'></span>`).join('');
+    }
+
+    function nextImage() {
+      currentImg = (currentImg + 1) % galleryImages.length;
+      updateGallery();
+    }
+
+    function prevImage() {
+      currentImg = (currentImg - 1 + galleryImages.length) % galleryImages.length;
+      updateGallery();
+    }
+
+    function goToImage(i) {
+      currentImg = i;
+      updateGallery();
+    }
+
+    updateGallery();
+  </script>
 </body>
 </html>
